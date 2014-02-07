@@ -50,7 +50,7 @@
         <input class="btn btn-sm btn-primary" type="submit" value="Add My Place !">
         </form>
         <!--<span class="mimic">{{needed}}</span>-->
-        <div class="btn btn-sm" ng-repeat="place in matches" ng-click="addPlace(place,'suggested')">{{place}}</div>
+        <div class="btn btn-sm" ng-model="matches" ng-repeat="place in matches" ng-click="addPlace(place,'suggested')">{{place}}</div>
         <p>Type in any place name into the box and get automated suggestions based on what has been submitted before. Hit enter or press 'Add My Place !' to add yours to the firebase database in real time. In theory this is available to all connected clients in realtime.</p>
         <p>
           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
