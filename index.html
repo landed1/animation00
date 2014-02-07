@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="autoFillApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+     <!-- Firebase -->
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <!--Underscore -->
+    <script src="vendors/underscore-min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+
+    <!-- AngularFire Plugin -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+
+    <script src="js/AutoFillApp.js"></script>
+    <script src="js/AutoFillController.js"></script>
+
+    <title>Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron" ng-controller="AutoFill">
+        <h1>TYPE IN</h1>
+        <form ng-submit="addPlace(needed)">
+        <input type="text" id="textInput" ng-model="needed" ng-change="changeField(needed)" required>
+        <input class="btn btn-sm btn-primary" type="submit" value="Add My Place !">
+        </form>
+        <!--<span class="mimic">{{needed}}</span>-->
+        <div class="btn btn-sm" ng-repeat="place in matches" ng-click="addPlace(place,'suggested')">{{place}}</div>
+        <p>Type in any place name into the box and get automated suggestions based on what has been submitted before. Hit enter or press 'Add My Place !' to add yours to the firebase database in real time. In theory this is available to all connected clients in realtime.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.min.js" ></script>
+  </body>
+</html>
