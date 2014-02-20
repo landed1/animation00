@@ -1,0 +1,6 @@
+<FilesMatch "\.(html)$">
+FileETag None
+<ifModule mod_headers.c>
+Header set Access-Control-Allow-Origin: https://github.com
+</ifModule>
+</FilesMatch>
